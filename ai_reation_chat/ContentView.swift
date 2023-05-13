@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     //画面遷移
     @State private var showShould_chat_View = false
-    
+
     var body: some View {
         NavigationView{
             VStack {
