@@ -201,13 +201,17 @@ struct chat_View: View {
             }
         }.navigationBarBackButtonHidden(true)
         //アルゴリズム追加アラート
-        .alert(isPresented: $Algorithmic_add) {
-             Alert(title: Text("追加"),
-                   message: Text("アルゴリズムAIはこの言葉になんて返事をすればいいか理解していないようです。なんて返事をすればいいか学習させましょう！"),
-                   textField: Algorithmic_textfiled(configurationHandler: nil),
-                   dismissButton: .default(Text("決定"),
-                                           action: {}))
-         }
+        .alert("アルゴリズム追加", isPresented: $Algorithmic_add) {
+            VStack {
+                TextField("返信させたい言葉を入力", text: $Algorithmic_textfiled)
+                Button("OK", action: {
+                    Conversation_list.updateValue(Algorithmic_textfiled, forKey: Waiting_for_conversation_reply)
+                })
+            }
+        } message: {
+            Text("アルゴリズムAIはこの言葉になんて返事をすればいいか理解していないようです。なんて返事をすればいいか学習させましょう！")
+        }
+
     }
     
     //アルゴリズム一致検索関数
@@ -244,7 +248,7 @@ struct chat_View: View {
                 number_of_replies = 1
             }
         } else {
-            print("該当するキーはありません")
+            Algorithmic_add = true
         }
     }
 }
