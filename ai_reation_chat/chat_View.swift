@@ -220,31 +220,37 @@ struct chat_View: View {
             if number_of_replies == 0{
                 respons_content[0] = value
                 Reply_content[0] = Waiting_for_conversation_reply
+                UserDefaults.standard.set(Conversation_list, forKey: "algorithm")
                 number_of_replies = 1
             }
             else if number_of_replies == 1{
                 respons_content[1] = value
                 Reply_content[1] = Waiting_for_conversation_reply
+                UserDefaults.standard.set(Conversation_list, forKey: "algorithm")
                 number_of_replies = 2
             }
             else if number_of_replies == 2{
                 respons_content[2] = value
                 Reply_content[2] = Waiting_for_conversation_reply
+                UserDefaults.standard.set(Conversation_list, forKey: "algorithm")
                 number_of_replies = 3
             }
             else if number_of_replies == 3{
                 respons_content[3] = value
                 Reply_content[3] = Waiting_for_conversation_reply
+                UserDefaults.standard.set(Conversation_list, forKey: "algorithm")
                 number_of_replies = 4
             }
             else if number_of_replies == 4{
                 respons_content[4] = value
                 Reply_content[4] = Waiting_for_conversation_reply
+                UserDefaults.standard.set(Conversation_list, forKey: "algorithm")
                 number_of_replies = 5
             }
             else if number_of_replies == 5{
                 respons_content[5] = value
                 Reply_content[5] = Waiting_for_conversation_reply
+                UserDefaults.standard.set(Conversation_list, forKey: "algorithm")
                 number_of_replies = 1
             }
         } else {

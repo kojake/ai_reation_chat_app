@@ -29,14 +29,6 @@ struct ContentView: View {
                         Text("会話を始める")
                     }
                 }.buttonStyle(BlueButtonStyle())
-                Button(action: {
-                    
-                }) {
-                    HStack{
-                        Image(systemName: "minus.circle.fill")
-                        Text("アルゴリズム削除")
-                    }
-                }.buttonStyle(BlueButtonStyle())
             }
         }
     }
